@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -66,6 +67,7 @@ const scpDocuments: SCPDocument[] = [
 ];
 
 const Index = () => {
+  const navigate = useNavigate();
   const [authorized, setAuthorized] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [classFilter, setClassFilter] = useState<string>('all');
@@ -234,6 +236,7 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   className="w-full border-destructive text-destructive hover:bg-destructive hover:text-white"
+                  onClick={() => navigate(`/scp/${doc.id}`)}
                 >
                   <Icon name="FileSearch" className="w-4 h-4 mr-2" />
                   ОТКРЫТЬ ПОЛНЫЙ ОТЧЕТ
