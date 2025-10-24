@@ -203,6 +203,7 @@ const Index = () => {
                   key={science.id}
                   className={`p-6 border-2 ${science.color} hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 cursor-pointer animate-fade-in`}
                   style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={() => navigate(`/parascience/${science.id}`)}
                 >
                   <div className="space-y-4">
                     <div className="flex items-start justify-between">
@@ -245,6 +246,7 @@ const Index = () => {
                   key={dept.id}
                   className="p-6 border border-border hover:border-primary transition-all duration-300 cursor-pointer animate-fade-in"
                   style={{ animationDelay: `${index * 0.05}s` }}
+                  onClick={() => navigate(`/department/${dept.id}`)}
                 >
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
